@@ -21,7 +21,7 @@ with open(output_file, 'wb') as fout:
   for i in range(number_of_samples):
     i_hz = delta_hz * (i/number_of_samples)
     v = math.sin(2 * math.pi * i * (sweep_start_hz + i_hz) / sample_rate) * 0.99
-    v *= (2**15 - 1)
+    v *= WAV_SAMPLE_MAX
     v = int(v)
     wav_writer.write_sample(v)
   wav_writer.finish(metadata)

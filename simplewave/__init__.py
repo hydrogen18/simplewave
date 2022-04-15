@@ -5,6 +5,8 @@ LITTLE_ENDIAN_INT = struct.Struct('<I')
 LITTLE_ENDIAN_SIGNED_SHORT = struct.Struct('<h')
 CHUNK_SIZE_OFFSET = 4
 DATA_SUB_CHUNK_SIZE_SIZE_OFFSET = 40
+WAV_SAMPLE_MIN = -32768
+WAV_SAMPLE_MAX = 32767
 class WaveWriter(object):
   '''
   WaveWriter writes a single channel 16-bit wave file into the parameter fout with a sample rate set by sample_rate
